@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>UV Index</title>
+        <link rel="stylesheet" href="uvstylesheet.css">
+        <link rel="stylesheet" href="uvbuttonstyling.css">
+    </head>
+    <body>
+        <header>Here we will tell you what your UV Index is and your suggested SPF Strength</header>
+
+        <div class="nav">
+            <a href="uvformpage.html">Form</a>
+            <a href="resultspage.html">Results</a>
+            <a href="aboutuvpage.html">About</a>
+            <a href="uvhelppage.html">Help</a>
+        </div>
+        <div class="suggestions">
+            <h2>The UV Index at your location is:</h2>
+            <div class="uvindexbox" id="uvIndexBox">
+
+            </div>
+            <h2>Your suggested SPF is:</h2>
+            <div class="spfbox" id="spfBox">
+
+            </div>
+        </div>
+
+        <script src="uvscript.js"></script>
+        <script>
+            const urlParams=new URLSearchParams(window.location.search);
+            const uvIndex= urlParams.get('uvIndex');
+            const suggestedSpf= urlParams.get('suggestedSpf');
+
+            document.getElementById('uvIndexBox').innerText= uvIndex;
+            document.getElementById('spfBox').innerText= `Suggested SPF: ${suggestedSpf}`;
+        </script>
+
+    </body>
+</html>
